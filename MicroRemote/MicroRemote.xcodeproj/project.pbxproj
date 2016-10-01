@@ -18,6 +18,7 @@
 		9EE7A1B01D9F82D600C1F383 /* BarCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7A1AF1D9F82D600C1F383 /* BarCodeScannerViewController.swift */; };
 		9EE7A1B51D9FAD3400C1F383 /* SubmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7A1B41D9FAD3400C1F383 /* SubmissionViewController.swift */; };
 		9EE7A1B71D9FC4C300C1F383 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7A1B61D9FC4C300C1F383 /* TimerViewController.swift */; };
+		C0911D2E1D9FCA6D0041CC3E /* HttpWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0911D2D1D9FCA6D0041CC3E /* HttpWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		9EE7A1AF1D9F82D600C1F383 /* BarCodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCodeScannerViewController.swift; sourceTree = "<group>"; };
 		9EE7A1B41D9FAD3400C1F383 /* SubmissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmissionViewController.swift; sourceTree = "<group>"; };
 		9EE7A1B61D9FC4C300C1F383 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		C0911D2D1D9FCA6D0041CC3E /* HttpWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				9EE7A17C1D9F5EBD00C1F383 /* ViewController.h */,
 				9EE7A17D1D9F5EBD00C1F383 /* ViewController.m */,
 				9EE7A1AF1D9F82D600C1F383 /* BarCodeScannerViewController.swift */,
+				C0911D2D1D9FCA6D0041CC3E /* HttpWrapper.swift */,
 				9EE7A1B41D9FAD3400C1F383 /* SubmissionViewController.swift */,
 				9EE7A1B61D9FC4C300C1F383 /* TimerViewController.swift */,
 			);
@@ -306,6 +309,7 @@
 			files = (
 				9EE7A17E1D9F5EBD00C1F383 /* ViewController.m in Sources */,
 				9EE7A17B1D9F5EBD00C1F383 /* AppDelegate.m in Sources */,
+				C0911D2E1D9FCA6D0041CC3E /* HttpWrapper.swift in Sources */,
 				9EE7A1B51D9FAD3400C1F383 /* SubmissionViewController.swift in Sources */,
 				9EE7A1B01D9F82D600C1F383 /* BarCodeScannerViewController.swift in Sources */,
 				9EE7A1B71D9FC4C300C1F383 /* TimerViewController.swift in Sources */,

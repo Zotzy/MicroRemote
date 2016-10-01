@@ -23,6 +23,21 @@ class TimerViewController: UIViewController {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
+		
+		
+		
+		
+		var httpWrapper = HttpWrapper.sharedInstance
+		
+		//		getCookTime(upc: "54321", completion: printData)
+		
+		//		updateCookTime(upc: "54321", name: "noodles", cookTime: 90, waitTime: 90)
+		
+		httpWrapper.getCookTime(upc: "54321", completion: httpWrapper.printData)
+		
+		httpWrapper.updateCookTime(upc: "54321", name: "noodles", cookTime: 90, waitTime: 90)
+		
+		
   }
   
   override func didReceiveMemoryWarning() {
