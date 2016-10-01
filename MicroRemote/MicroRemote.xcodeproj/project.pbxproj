@@ -263,7 +263,7 @@
 				TargetAttributes = {
 					9EE7A1721D9F5EBD00C1F383 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = N675PJRS8S;
+						DevelopmentTeam = 2P3RRP947P;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -491,7 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = N675PJRS8S;
+				DEVELOPMENT_TEAM = 2P3RRP947P;
 				INFOPLIST_FILE = MicroRemote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = reecejeffnsteven.MicroRemote;
@@ -507,7 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = N675PJRS8S;
+				DEVELOPMENT_TEAM = 2P3RRP947P;
 				INFOPLIST_FILE = MicroRemote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = reecejeffnsteven.MicroRemote;
