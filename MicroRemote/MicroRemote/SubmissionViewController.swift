@@ -66,7 +66,6 @@ class SubmissionViewController: UIViewController, UITextFieldDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
     let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SubmissionViewController.dismissKeyboard))
     view.addGestureRecognizer(tap)
     // Do any additional setup after loading the view.

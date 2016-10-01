@@ -18,7 +18,9 @@
 		9EE7A1B01D9F82D600C1F383 /* BarCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7A1AF1D9F82D600C1F383 /* BarCodeScannerViewController.swift */; };
 		9EE7A1B51D9FAD3400C1F383 /* SubmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7A1B41D9FAD3400C1F383 /* SubmissionViewController.swift */; };
 		9EE7A1B71D9FC4C300C1F383 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7A1B61D9FC4C300C1F383 /* TimerViewController.swift */; };
+		C0377B151DA04FF40028A22F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0377B141DA04FF40028A22F /* Security.framework */; };
 		C0911D2E1D9FCA6D0041CC3E /* HttpWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0911D2D1D9FCA6D0041CC3E /* HttpWrapper.swift */; };
+		C0F9A15E1DA04D7B00FF475B /* AES256CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F9A15D1DA04D7B00FF475B /* AES256CBC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +61,9 @@
 		9EE7A1AF1D9F82D600C1F383 /* BarCodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCodeScannerViewController.swift; sourceTree = "<group>"; };
 		9EE7A1B41D9FAD3400C1F383 /* SubmissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmissionViewController.swift; sourceTree = "<group>"; };
 		9EE7A1B61D9FC4C300C1F383 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		C0377B141DA04FF40028A22F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C0911D2D1D9FCA6D0041CC3E /* HttpWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpWrapper.swift; sourceTree = "<group>"; };
+		C0F9A15D1DA04D7B00FF475B /* AES256CBC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AES256CBC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0377B151DA04FF40028A22F /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +99,8 @@
 				9EE7A18F1D9F5EBE00C1F383 /* MicroRemoteTests */,
 				9EE7A19A1D9F5EBE00C1F383 /* MicroRemoteUITests */,
 				9EE7A1741D9F5EBD00C1F383 /* Products */,
+				C0F9A15C1DA04D7B00FF475B /* AES256CBC */,
+				C0377B131DA04FF40028A22F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +175,22 @@
 				9EE7A1841D9F5EBE00C1F383 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		C0377B131DA04FF40028A22F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0377B141DA04FF40028A22F /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0F9A15C1DA04D7B00FF475B /* AES256CBC */ = {
+			isa = PBXGroup;
+			children = (
+				C0F9A15D1DA04D7B00FF475B /* AES256CBC.swift */,
+			);
+			path = AES256CBC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0F9A15E1DA04D7B00FF475B /* AES256CBC.swift in Sources */,
 				9EE7A17E1D9F5EBD00C1F383 /* ViewController.m in Sources */,
 				9EE7A17B1D9F5EBD00C1F383 /* AppDelegate.m in Sources */,
 				C0911D2E1D9FCA6D0041CC3E /* HttpWrapper.swift in Sources */,

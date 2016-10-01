@@ -37,6 +37,21 @@ class BarCodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
   override func viewDidLoad()
   {
     super.viewDidLoad()
+		
+		
+		let str = "my little secret"
+		let password = AES256CBC.generatePassword()
+		let encrypted = AES256CBC.encryptString(str, password: password)
+		print(str)
+		print("password: \(password)")
+		print("encrypted: \(encrypted)")
+		let decrypted = AES256CBC.decryptString(encrypted!, password: password)
+		print("decrypted: \(decrypted)")
+		
+//		let saveSuccessful: Bool = KeychainWrapper.standard.set("Some String", forKey: "myKey")
+
+		
+		
   }
   
   override func viewDidAppear(_ animated: Bool)
