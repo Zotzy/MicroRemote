@@ -16,6 +16,8 @@
 		9EE7A1911D9F5EBE00C1F383 /* MicroRemoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7A1901D9F5EBE00C1F383 /* MicroRemoteTests.m */; };
 		9EE7A19C1D9F5EBE00C1F383 /* MicroRemoteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7A19B1D9F5EBE00C1F383 /* MicroRemoteUITests.m */; };
 		9EE7A1B01D9F82D600C1F383 /* BarCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7A1AF1D9F82D600C1F383 /* BarCodeScannerViewController.swift */; };
+		9EE7A1B51D9FAD3400C1F383 /* SubmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7A1B41D9FAD3400C1F383 /* SubmissionViewController.swift */; };
+		9EE7A1B71D9FC4C300C1F383 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE7A1B61D9FC4C300C1F383 /* TimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		9EE7A19D1D9F5EBE00C1F383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EE7A1AE1D9F82D600C1F383 /* MicroRemote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MicroRemote-Bridging-Header.h"; sourceTree = "<group>"; };
 		9EE7A1AF1D9F82D600C1F383 /* BarCodeScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCodeScannerViewController.swift; sourceTree = "<group>"; };
+		9EE7A1B41D9FAD3400C1F383 /* SubmissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmissionViewController.swift; sourceTree = "<group>"; };
+		9EE7A1B61D9FC4C300C1F383 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 				9EE7A17C1D9F5EBD00C1F383 /* ViewController.h */,
 				9EE7A17D1D9F5EBD00C1F383 /* ViewController.m */,
 				9EE7A1AF1D9F82D600C1F383 /* BarCodeScannerViewController.swift */,
+				9EE7A1B41D9FAD3400C1F383 /* SubmissionViewController.swift */,
+				9EE7A1B61D9FC4C300C1F383 /* TimerViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -300,7 +306,9 @@
 			files = (
 				9EE7A17E1D9F5EBD00C1F383 /* ViewController.m in Sources */,
 				9EE7A17B1D9F5EBD00C1F383 /* AppDelegate.m in Sources */,
+				9EE7A1B51D9FAD3400C1F383 /* SubmissionViewController.swift in Sources */,
 				9EE7A1B01D9F82D600C1F383 /* BarCodeScannerViewController.swift in Sources */,
+				9EE7A1B71D9FC4C300C1F383 /* TimerViewController.swift in Sources */,
 				9EE7A1781D9F5EBD00C1F383 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,6 +558,7 @@
 				9EE7A1A21D9F5EBE00C1F383 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9EE7A1A31D9F5EBE00C1F383 /* Build configuration list for PBXNativeTarget "MicroRemoteTests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +567,7 @@
 				9EE7A1A51D9F5EBE00C1F383 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9EE7A1A61D9F5EBE00C1F383 /* Build configuration list for PBXNativeTarget "MicroRemoteUITests" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +576,7 @@
 				9EE7A1A81D9F5EBE00C1F383 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
