@@ -7,35 +7,29 @@
 //
 
 import UIKit
+import AVFoundation
 
 class TimerViewController: UIViewController {
   
   @IBOutlet weak var currentState: UILabel!
   @IBOutlet weak var timerLabel: UILabel!
+  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var cookButton: UIButton!
   
-  
-  var cookTime = 90
-  var waitTime = 20
+  var upc: String = ""
+  var success: Bool = false
+  var name: String = ""
+  var cookTime: Int = -1
+  var waitTime: Int = -1
   
   var timer = Timer()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
-		
-		
-		
-		
-		var httpWrapper = HttpWrapper.sharedInstance
-		
-		//		getCookTime(upc: "54321", completion: printData)
-		
-		//		updateCookTime(upc: "54321", name: "noodles", cookTime: 90, waitTime: 90)
-		
-		httpWrapper.getCookTime(upc: "54321", completion: httpWrapper.printData)
-		
-		httpWrapper.updateCookTime(upc: "54321", name: "noodles", cookTime: 90, waitTime: 90)
+    nameLabel.text = "Cooking " + name
+    
+    // Do any additional setup after loading the view
 		
 		
   }
@@ -47,8 +41,12 @@ class TimerViewController: UIViewController {
   
   
   @IBAction func startCooking(_ sender: AnyObject) {
-    currentState.text! = "Cooking..."
-    timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
+    if(cookButton.titleLabel?.text! == "Cook Another Item") {
+      self.performSegue(withIdentifier: "restart", sender: self)
+    } else {
+      currentState.text! = "Cooking..."
+      timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
+    }
   }
   
   func tick() {
@@ -68,7 +66,10 @@ class TimerViewController: UIViewController {
         timerLabel.text! = String(format: "%2d:%.2d", arguments: [minutes, seconds])
         waitTime = waitTime - 1
       } else {
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
         currentState.text! = "Done!"
+        cookButton.titleLabel?.text! = "Cook Another Item"
+        cookButton.titleLabel?.sizeToFit()
       }
     }
   }

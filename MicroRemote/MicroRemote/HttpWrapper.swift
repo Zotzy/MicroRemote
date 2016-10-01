@@ -63,9 +63,8 @@ class HttpWrapper {
 					name = json?["name"] as! String
 					cookTime = json?["cook_time"] as! Int
 					waitTime = json?["wait_time"] as! Int
-					
-					completion(success, name, cookTime, waitTime)
-				}
+        }
+        completion(success, name, cookTime, waitTime)
 			}
 			
 		})

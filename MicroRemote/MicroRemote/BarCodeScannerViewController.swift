@@ -26,12 +26,17 @@ class BarCodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
   /// The UI layer to display the feed from the input source, in our case, the camera.
   var captureLayer:AVCaptureVideoPreviewLayer?
   
+
+  var upc = ""
+  var success = false
+  var name = ""
+  var cookTime = -1
+  var waitTime = -1
+  
   //MARK: View lifecycle
   override func viewDidLoad()
   {
     super.viewDidLoad()
-
-		
   }
   
   override func viewDidAppear(_ animated: Bool)
@@ -112,17 +117,25 @@ class BarCodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
       
       AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
       //found(code: readableObject.stringValue);
-      self.lblDataInfo.text = readableObject.stringValue
+      self.upc = readableObject.stringValue
       self.lblDataType.text = readableObject.type
-      NSLog(readableObject.stringValue)
-      NSLog(readableObject.type)
-
     }
     
     self.captureSession.stopRunning()
-    self.captureLayer?.removeFromSuperlayer()
-    self.captureLayer = nil
-    //}
+    /*
+    let alert: UIAlertController = UIAlertController(title: "Loading", message: "Please wait...", preferredStyle: UIAlertControllerStyle.alert)
+    let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init() as UIActivityIndicatorView
+    loadingIndicator.center = self.view.center
+    loadingIndicator.hidesWhenStopped = true
+    loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+    loadingIndicator.startAnimating()
+  
+    show(alert, sender: self)
+    */
+    let httpWrapper = HttpWrapper.sharedInstance
+    
+    httpWrapper.getCookTime(upc: self.upc, completion: self.getData)
+  
   }
   
   //MARK: Utility Functions
@@ -141,4 +154,43 @@ class BarCodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
     self.present(alertController, animated: true, completion: nil)
   }
   
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if (segue.identifier == "didFail") {
+      // pass data to next view
+      let destVC = segue.destination as! SubmissionViewController
+      destVC.upc = self.upc
+      destVC.success = self.success
+      destVC.name = self.name
+      destVC.cookTime = self.cookTime
+      destVC.waitTime = self.waitTime
+      
+    } else if (segue.identifier == "didSucceed") {
+      // pass data
+      let destVC = segue.destination as! TimerViewController
+      destVC.upc = self.upc
+      destVC.success = self.success
+      destVC.name = self.name
+      destVC.cookTime = self.cookTime
+      destVC.waitTime = self.waitTime
+    }
+    
+  }
+func getData(success: Bool, name: String, cookTime: Int, waitTime: Int) -> Void {
+  
+  print("Success: \(success), Name: \(name), cookTime: \(cookTime), waitTime: \(waitTime)")
+  //alert.dismiss(animated: true)
+  self.success = success
+  self.name = name
+  self.cookTime = cookTime
+  self.waitTime = waitTime
+  
+  if success {
+    self.performSegue(withIdentifier: "didSucceed", sender: self)
+    print("hello")
+  } else {
+    self.performSegue(withIdentifier: "didFail", sender: self)
+    print("hi")
+  }
+}
+
 }
