@@ -33,6 +33,10 @@ class BarCodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
   var cookTime = -1
   var waitTime = -1
   
+  var messageFrame = UIView()
+  var activityIndicator = UIActivityIndicatorView()
+  var strLabel = UILabel()
+  
   //MARK: View lifecycle
   override func viewDidLoad()
   {
@@ -122,6 +126,7 @@ class BarCodeScannerViewController: UIViewController, AVCaptureMetadataOutputObj
     }
     
     self.captureSession.stopRunning()
+    self.progressBarDisplayer(msg: "Please Wait", true)
     /*
     let alert: UIAlertController = UIAlertController(title: "Loading", message: "Please wait...", preferredStyle: UIAlertControllerStyle.alert)
     let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init() as UIActivityIndicatorView
@@ -192,5 +197,23 @@ func getData(success: Bool, name: String, cookTime: Int, waitTime: Int) -> Void 
     print("hi")
   }
 }
+  
+  func progressBarDisplayer(msg:String, _ indicator:Bool ) {
+    print(msg)
+    strLabel = UILabel(frame: CGRect(x: 50, y: 0, width: 200, height: 50))
+    strLabel.text = msg
+    strLabel.textColor = UIColor.white
+    messageFrame = UIView(frame: CGRect(x: view.frame.midX - 90, y: view.frame.midY - 25 , width: 180, height: 50))
+    messageFrame.layer.cornerRadius = 15
+    messageFrame.backgroundColor = UIColor(white: 0, alpha: 0.7)
+    if indicator {
+      activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
+      activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+      activityIndicator.startAnimating()
+      messageFrame.addSubview(activityIndicator)
+    }
+    messageFrame.addSubview(strLabel)
+    view.addSubview(messageFrame)
+  }
 
 }
