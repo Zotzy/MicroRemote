@@ -45,6 +45,9 @@ class TimerViewController: UIViewController {
       self.performSegue(withIdentifier: "restart", sender: self)
     } else {
       currentState.text! = "Cooking..."
+      let httpWrapper = HttpWrapper.sharedInstance
+      httpWrapper.doCook(upc: upc)
+      
       timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
     }
   }

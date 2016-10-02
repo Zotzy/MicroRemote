@@ -14,7 +14,7 @@ class HttpWrapper {
 	private var serverUrl = "http://10.140.110.185:8080"
 	
 	func doCook(upc: String) -> Void {
-		let request = NSMutableURLRequest(url: NSURL(string: serverUrl + "/get_cooktime")! as URL)
+		let request = NSMutableURLRequest(url: NSURL(string: serverUrl + "/do_cook")! as URL)
 		let session = URLSession.shared
 		request.httpMethod = "POST"
 		
@@ -98,6 +98,8 @@ class HttpWrapper {
 		let task = session.dataTask(with: request as URLRequest)
 		task.resume()
 	}
+  
+  
 
 	func printData(success: Bool, name: String, cookTime: Int, waitTime: Int) -> Void {
 		print("Success: \(success), Name: \(name), cookTime: \(cookTime), waitTime: \(waitTime)")
