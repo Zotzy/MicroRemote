@@ -60,21 +60,21 @@ class HttpWrapper {
 		
 		request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
 		
-//		let key = KeychainSwift()
-//		
-//		if let pass = key.get("password") {
-//			let dataString = String(data: request.httpBody!, encoding: .utf8)
-//			let encryptedJSON = AES256CBC.encryptString(dataString!, password: pass)
-//			let encryptedJSONData = encryptedJSON?.data(using: .utf8)
-//			request.httpBody = encryptedJSONData
-//		} else {
-//			let pass = AES256CBC.generatePassword()
-//			key.set(pass, forKey: "password")
-//			let dataString = String(data: request.httpBody!, encoding: .utf8)
-//			let encryptedJSON = AES256CBC.encryptString(dataString!, password: pass)
-//			let encryptedJSONData = encryptedJSON?.data(using: .utf8)
-//			request.httpBody = encryptedJSONData
-//		}
+		let key = KeychainSwift()
+		
+		if let pass = key.get("password") {
+			let dataString = String(data: request.httpBody!, encoding: .utf8)
+			let encryptedJSON = AES256CBC.encryptString(dataString!, password: pass)
+			let encryptedJSONData = encryptedJSON?.data(using: .utf8)
+			request.httpBody = encryptedJSONData
+		} else {
+			let pass = AES256CBC.generatePassword()
+			key.set(pass, forKey: "password")
+			let dataString = String(data: request.httpBody!, encoding: .utf8)
+			let encryptedJSON = AES256CBC.encryptString(dataString!, password: pass)
+			let encryptedJSONData = encryptedJSON?.data(using: .utf8)
+			request.httpBody = encryptedJSONData
+		}
 
 		request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 		request.addValue("application/json", forHTTPHeaderField: "Accept")
